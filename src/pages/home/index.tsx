@@ -1,11 +1,15 @@
+import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
 import { Page } from "@/components";
 import { PATHS } from "@/routes/paths";
-import Button from "@mui/material/Button";
 
 export default function Home() {
+    const theme = useTheme();
+
     return (
         <Page title={PATHS.home.name}>
             <Stack spacing={3}>
@@ -20,6 +24,10 @@ export default function Home() {
                 <Button color="tertiary" variant="contained">
                     Test 3
                 </Button>
+
+                <Card sx={{ backgroundColor: theme.palette.tertiary.main, padding: "1rem" }}>
+                    One-off customization
+                </Card>
             </Stack>
         </Page>
     );
